@@ -1,0 +1,7 @@
+<h1 class="text-center text-danger">Stories List</h1>
+
+<div class="text-right" style="margin-bottom: 30px;">
+  <%= link_to "New Story", new_story_path, class: "btn btn-primary" %>
+</div>
+
+<%= render @stories %>
