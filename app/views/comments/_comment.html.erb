@@ -1,0 +1,15 @@
+<li class="list-unstyled replies">
+  <%= comment.body %>
+
+  <%= form_for [comment, Comment.new] do |f| %>
+    <div class="form-group">
+      <%= f.text_area :body, class: "form-control" %>
+    </div>
+
+    <%= f.submit "reply", class: "btn btn-primary btn-sm" %>
+  <% end %>
+
+  <ul>
+    <%= render partial: "comments/comment", collection: comment.comments %>
+  </ul>
+</li>

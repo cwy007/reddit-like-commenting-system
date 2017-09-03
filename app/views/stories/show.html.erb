@@ -3,3 +3,17 @@
 <%= render @story %>
 
 <hr>
+
+<h3 class="text-center text-info">Comments</h3>
+
+<%= form_for [@story, Comment.new] do |f| %>
+  <div class="form-group">
+    <%= f.text_area :body, class: "form-control", rows: 5 %>
+  </div>
+
+  <%= f.submit class: "btn btn-primary" %>
+<% end %>
+
+<ul>
+  <%= render partial: "comments/comment", collection: @story.comments %>
+</ul>
