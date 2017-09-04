@@ -1,5 +1,17 @@
 <footer class="footer">
   <div class="container">
-     <p class="text-muted">Time now: <%= Time.now.to_s(:long) %></p>
-  </div>
+    <div class="row">
+      <div class="col-sm-4">
+        <p class="text-muted lead mgt10"><strong>Time now:</strong><br> <%= Time.now.to_s(:long) %></p>
+      </div>
+      <div class="col-sm-8">
+        <ul class="list-unstyled text-center text-muted mgt10">
+          <li><strong>外部链接</strong></li>
+          <li class="active"><a href="https://github.com/cwy007/reddit-like-commenting-system" target="_blank">Source code <span class="sr-only">(current)</span></a></li>
+          <li><a href="https://www.codementor.io/ruby-on-rails/tutorial/threaded-comments-polymorphic-associations" target="_blank">Reference</a></li>
+          <li><a href="https://www.reddit.com/" target="_blank">Reddit website</a></li>
+        </ul>
+      </div>
+    </div><!-- end row -->
+  </div><!-- end container -->
 </footer>
