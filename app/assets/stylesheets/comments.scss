@@ -2,8 +2,19 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+// comments layout
 .replies .replies .replies .replies .replies {
   ul {
     padding-left: 0;
   }
+}
+
+.img-40 {
+  width: 40px;
+  height: 40px;
+}
+
+.img-30 {
+  width: 30px;
+  height: 30px;
 }

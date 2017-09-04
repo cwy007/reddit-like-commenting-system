@@ -5,7 +5,7 @@ class StoriesController < ApplicationController
 
   def show
     @story = Story.find(params[:id])
-    @comments = @story.comments
+    @comments = @story.comments.order("created_at DESC")
   end
 
   def new

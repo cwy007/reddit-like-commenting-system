@@ -1,15 +1,51 @@
 <li class="list-unstyled replies">
-  <%= comment.body %>
+  <div class="media">
+    <div class="media-left">
+      <% if comment.commentable_type == "Story" %>
+        <img class="media-object img-circle img-40" src="/images/green-logo.png" alt="user default logo">
+      <% else %>
+        <img class="media-object img-circle img-30" src="/images/green-logo.png" alt="user default logo">
+      <% end %>
+    </div><!-- end media left -->
 
-  <%= form_for [comment, Comment.new] do |f| %>
-    <div class="form-group">
-      <%= f.text_area :body, class: "form-control" %>
-    </div>
+    <div class="media-body">
+      <h4 class="media-heading">User name</h4>
+      <p class="text-muted">Reply at: <%= comment.created_at.to_s(:long) %></p>
+      <p><%= simple_format comment.body %></p>
 
-    <%= f.submit "reply", class: "btn btn-primary btn-sm" %>
-  <% end %>
+      <p id="open-toggle-<%= comment.id %>" class="btn btn-link">reply</p>
+
+      <!-- ===========reply form hide/show============ -->
+      <div class="bg-success well-sm" id="comment-<%= comment.id %>">
+        <%= form_for [comment, Comment.new] do |f| %>
+          <div class="form-group">
+            <%= f.text_area :body, autofocus: true, class: "form-control" %>
+          </div>
+
+          <div class="form-group text-right">
+            <span class="btn btn-default btn-xs" id="hide-toggle-<%= comment.id %>">Cancel</span>
+            <%= f.submit "reply", class: "btn btn-primary" %>
+          </div>
+        <% end %>
+      </div><!-- end well-sm -->
+    </div><!-- end media body -->
+  </div><!-- end media -->
 
   <ul>
     <%= render partial: "comments/comment", collection: comment.comments %>
   </ul>
 </li>
+
+<script>
+  // js for comment form hide/show
+  $("#comment-<%= comment.id %>").hide();
+
+  $("#open-toggle-<%= comment.id %>").click(function(){
+    $("#comment-<%= comment.id %>").show();
+    $("textarea").focus();
+  });
+
+  $("#hide-toggle-<%= comment.id %>").click(function(){
+    $("#comment-<%= comment.id %>").hide();
+  })
+</script>
