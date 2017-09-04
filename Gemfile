@@ -11,6 +11,8 @@ gem 'bootstrap-sass'
 gem 'jquery-rails'
 # flexible authentication
 gem 'devise'
+# autosize textarea
+gem 'autosize-rails'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.3'

@@ -43,6 +43,8 @@ GEM
     arel (8.0.0)
     autoprefixer-rails (7.1.1)
       execjs
+    autosize-rails (1.18.17)
+      rails (>= 3.1)
     awesome_print (1.7.0)
     awesome_rails_console (0.4.0)
       awesome_print
@@ -231,6 +233,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  autosize-rails
   awesome_rails_console
   bootstrap-sass
   byebug

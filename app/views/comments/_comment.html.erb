@@ -19,7 +19,7 @@
       <div class="bg-success well-sm" id="comment-<%= comment.id %>">
         <%= form_for [comment, Comment.new] do |f| %>
           <div class="form-group">
-            <%= f.text_area :body, autofocus: true, class: "form-control" %>
+            <%= f.text_area :body, class: "form-control", id: "textarea-#{comment.id}"  %>
           </div>
 
           <div class="form-group text-right">
@@ -37,15 +37,17 @@
 </li>
 
 <script>
-  // js for comment form hide/show
-  $("#comment-<%= comment.id %>").hide();
-
-  $("#open-toggle-<%= comment.id %>").click(function(){
-    $("#comment-<%= comment.id %>").show();
-    $("textarea").focus();
-  });
-
-  $("#hide-toggle-<%= comment.id %>").click(function(){
+  $(document).on("turbolinks:load", function(){
+    // js for comment form hide/show
     $("#comment-<%= comment.id %>").hide();
-  })
+
+    $("#open-toggle-<%= comment.id %>").click(function(){
+      $("#comment-<%= comment.id %>").show();
+      $("#textarea-<%= comment.id %>").focus();
+    });
+
+    $("#hide-toggle-<%= comment.id %>").click(function(){
+      $("#comment-<%= comment.id %>").hide();
+    })
+  });
 </script>

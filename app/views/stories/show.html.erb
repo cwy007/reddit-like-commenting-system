@@ -14,7 +14,7 @@
 
 <%= form_for [@story, Comment.new] do |f| %>
   <div class="form-group">
-    <%= f.text_area :body, class: "form-control", rows: 5 %>
+    <%= f.text_area :body, class: "form-control" %>
   </div>
 
   <div class="submit text-right">
