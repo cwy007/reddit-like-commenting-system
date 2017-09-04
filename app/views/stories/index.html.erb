@@ -4,4 +4,17 @@
   <%= link_to "New Story", new_story_path, class: "btn btn-primary" %>
 </div>
 
-<%= render @stories %>
+<table class="table">
+  <tbody>
+    <thead>
+      <tr>
+        <th>Story Title</th>
+        <th>User</th>
+        <th>action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <%= render @stories %>
+    </tbody>
+  </tbody>
+</table>
