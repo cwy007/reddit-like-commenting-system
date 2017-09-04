@@ -5,7 +5,7 @@ class CommentsController < ApplicationController
     @comment = @commentable.comments.new(comment_params)
 
     if @comment.save
-      flash[:success] = "comment 新建成功"
+      flash[:notice] = "comment 新建成功"
       redirect_back fallback_location: root_path
     else
       flash[:alert] =  "something wrong"
