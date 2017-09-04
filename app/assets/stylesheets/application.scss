@@ -2,3 +2,96 @@
 @import "bootstrap";
 @import "comments";
 @import "footer";
+
+/* Large Devices, Wide Screens */
+@media only screen and (max-width : 1200px) {
+
+}
+
+/* Medium Devices, Desktops */
+@media only screen and (max-width : 992px) {
+  
+}
+
+/* Small Devices, Tablets */
+@media only screen and (max-width : 768px) {
+
+  /* Sticky footer styles
+  -------------------------------------------------- */
+  html {
+    position: relative;
+    min-height: 100%;
+  }
+  body {
+    /* Margin bottom by footer height */
+    margin-bottom: 165px;
+    background-image: image-url("/images/white-wall.png");
+    .content {
+      background-image: image-url("/images/paper.jpg");
+      margin-bottom: 20px;
+      padding: 6px 50px 20px 50px;
+      min-height: 500px;
+    }
+  }
+
+  .mgt10 { margin-top: 10px; }
+
+  .footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    /* Set the fixed height of the footer here */
+    height: 165px;
+    background-color: #333;
+    p {
+      text-align: center;
+    }
+    p, ul, a {
+      color: #ddd;
+    }
+    a:hover {
+      color: #FFF;
+    }
+  }
+
+}
+
+/* Extra Small Devices, Phones */
+@media only screen and (max-width : 480px) {
+  .navbar { margin-bottom: 0;}
+  body{
+   .content {
+      h1 {
+        margin: 0;
+        padding: 20px;
+      }
+      margin-bottom: 0;
+      padding: 0;
+    }
+  }
+
+  .story-show-page {
+    td {
+      display: block;
+      margin: 0;
+      width: 100%;
+      text-align: center;
+    }
+  }
+
+  // styles for new comment button
+  div.submit.text-right {
+    #cancel {
+      width: 50%;
+    }
+    .fsubmit {
+      width: 50%;
+    }
+  }
+
+}
+
+/* Custom, iPhone Retina */
+@media only screen and (max-width : 320px) {
+
+}

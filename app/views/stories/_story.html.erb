@@ -1,7 +1,7 @@
 <tr>
-  <td style="width: 60%;"><%= link_to story.title, story.url, target: "_blank" %></td>
+  <td><%= link_to story.title, story.url, target: "_blank" %></td>
   <td><%= story.user.email %></td>
-  <td style="width: 15%;">
+  <td>
     <% from_comment_show ||= false %>
     <% if from_comment_show %>
       <% if current_user && story.user == current_user %>
