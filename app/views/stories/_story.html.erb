@@ -3,9 +3,13 @@
     <tr>
       <td><%= link_to story.title, story.url, target: "_blank" %></td>
       <td class="text-right">
-        <%= link_to "Show Page", story, class: "btn btn-primary btn-xs" %>
-        <%= link_to "Edit", edit_story_path(story), class: "btn btn-primary btn-xs" %>
-        <%= link_to "Delete", story_path(story), method: :delete, class: "btn btn-danger btn-xs" %>
+        <% from_comment_show ||= false %>
+        <% if from_comment_show %>
+          <%= link_to "Edit", edit_story_path(story), class: "btn btn-primary btn-xs" %>
+          <%= link_to "Delete", story_path(story), method: :delete, class: "btn btn-danger btn-xs" %>
+        <% else %>
+          <%= link_to "Show Page", story, class: "btn btn-info btn-xs" %>
+        <% end %>
       </td>
     </tr>
   </tbody>

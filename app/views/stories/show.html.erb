@@ -1,6 +1,10 @@
-<h1 class="text-right"><%= link_to "Back", stories_path, class: "btn btn-primary" %></h1>
+<h1 class="text-right">
+  <%= link_to stories_path, class: "btn btn-default" do%>
+    Back &rarr;
+  <% end %>
+</h1>
 
-<%= render @story %>
+<%= render @story, from_comment_show: true %>
 
 <hr>
 
@@ -11,7 +15,9 @@
     <%= f.text_area :body, class: "form-control", rows: 5 %>
   </div>
 
-  <%= f.submit class: "btn btn-primary" %>
+  <div class="submit text-right">
+    <%= f.submit class: "btn btn-primary" %>
+  </div>
 <% end %>
 
 <ul>
