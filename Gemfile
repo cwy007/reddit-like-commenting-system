@@ -9,7 +9,8 @@ end
 gem 'bootstrap-sass'
 # jquery library
 gem 'jquery-rails'
-
+# flexible authentication
+gem 'devise'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.3'
@@ -54,7 +55,7 @@ group :development do
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
   # Generate entity-relationships diagram
-  gem 'rails-erd' 
+  gem 'rails-erd'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
