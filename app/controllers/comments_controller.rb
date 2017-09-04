@@ -3,7 +3,8 @@ class CommentsController < ApplicationController
 
   def create
     @comment = @commentable.comments.new(comment_params)
-
+    @comment.user = current_user
+    
     if @comment.save
       flash[:notice] = "comment 新建成功"
       redirect_back fallback_location: root_path

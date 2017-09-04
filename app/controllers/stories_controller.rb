@@ -18,6 +18,7 @@ class StoriesController < ApplicationController
 
   def create
     @story = Story.new(story_params)
+    @story.user = current_user
 
     if @story.save
       flash[:notice] = "Story created successfully"

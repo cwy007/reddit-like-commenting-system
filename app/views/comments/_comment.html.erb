@@ -9,7 +9,7 @@
     </div><!-- end media left -->
 
     <div class="media-body">
-      <h4 class="media-heading">User name</h4>
+      <h4 class="media-heading"><%= comment.user.display_name %></h4>
       <p class="text-muted">Reply at: <%= comment.created_at.to_s(:long) %></p>
       <p><%= simple_format comment.body %></p>
 
