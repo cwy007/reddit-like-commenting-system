@@ -18,3 +18,30 @@
   width: 30px;
   height: 30px;
 }
+
+// styles for story show page new comment form
+#new-comment {
+  border-radius: 0;
+}
+
+div.submit.text-right {
+  padding: 0;
+  // background-color: #d4dce2;
+  height: 45px;
+  border: 1px solid #ccc;
+  color: #fff;
+  #cancel {
+    height: 100%;
+    width: 150px;
+    background-color: #4b5963;
+    border: 0;
+    margin-right: -5px;
+  }
+  .fsubmit {
+    height: 100%;
+    width: 200px;
+    background-color: #073648;
+    border: 0;
+    padding: 0;
+  }
+}
