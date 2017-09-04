@@ -6,11 +6,12 @@ html {
 }
 body {
   /* Margin bottom by footer height */
+  .navbar { margin-bottom: 0;}
+
   margin-bottom: 100px;
   background-image: image-url("/images/white-wall.png");
   .content {
     background-image: image-url("/images/paper.jpg");
-    margin-bottom: 20px;
     padding: 6px 50px 20px 50px;
     min-height: 500px;
   }
@@ -25,11 +26,14 @@ body {
   /* Set the fixed height of the footer here */
   height: 100px;
   background-color: #333;
-  p, ul, a {
+  p, ul {
     color: #ddd;
   }
-  a:hover {
-    color: #FFF;
+  a {
+    color: #a94442;
+    &:hover{
+      color: #d2211d;
+    }
   }
 }
 
