@@ -19,7 +19,7 @@
       <div class="bg-success well-sm" id="comment-<%= comment.id %>">
         <%= form_for [comment, Comment.new] do |f| %>
           <div class="form-group">
-            <%= f.text_area :body, class: "form-control", id: "textarea-#{comment.id}"  %>
+            <%= f.text_area :body, placeholder: "say something ... ", class: "form-control", id: "textarea-#{comment.id}"  %>
           </div>
 
           <div class="form-group text-right">

@@ -14,11 +14,11 @@
 
 <%= form_for [@story, Comment.new] do |f| %>
   <div class="form-group">
-    <%= f.text_area :body, class: "form-control" %>
+    <%= f.text_area :body, autofocus: true, placeholder: "Add a comment", class: "form-control" %>
   </div>
 
   <div class="submit text-right">
-    <%= f.submit class: "btn btn-primary" %>
+    <%= f.submit "Submit", class: "btn btn-primary" %>
   </div>
 <% end %>
 

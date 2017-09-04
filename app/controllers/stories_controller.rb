@@ -1,6 +1,7 @@
 class StoriesController < ApplicationController
   before_action :authenticate_user!
-  
+  before_action :find_story_and_check_permission, only: [:edit, :update, :destroy]
+
   def index
     @stories = Story.all
   end
@@ -15,7 +16,6 @@ class StoriesController < ApplicationController
   end
 
   def edit
-    @story = Story.find(params[:id])
   end
 
   def create
@@ -31,8 +31,6 @@ class StoriesController < ApplicationController
   end
 
   def update
-    @story = Story.find(params[:id])
-
     if @story.update(story_params)
       flash[:notice] = "Story updated successfully"
       redirect_to stories_path
@@ -42,8 +40,6 @@ class StoriesController < ApplicationController
   end
 
   def destroy
-    @story = Story.find(params[:id])
-
     @story.destroy
     flash[:alert] = "Story deleted"
     redirect_to stories_path
@@ -53,6 +49,15 @@ class StoriesController < ApplicationController
 
   def story_params
     params.require(:story).permit(:title, :url)
+  end
+
+  def find_story_and_check_permission
+    @story = Story.find(params[:id])
+
+    if current_user != @story.user
+      flash[:warning] = "You have no permission."
+      redirect_to root_path
+    end
   end
 
 end
